@@ -8,4 +8,3 @@ urlpatterns = [
     path('leaderboard/', views.leaderboard_view, name='leaderboard'),
     
 ]
-s
