@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🏆 Ultra Leaderboard</title>
+</head>
+<body>
+    <h1>🏆 Ultra Tribe Leaderboard</h1>
+    <ol>
+        {% for entry in leaderboard %}
+            <li>
+                {{ entry.user__username }} – {{ entry.total_xp }} XP
+            </li>
+        {% empty %}
+            <li>No XP entries yet... Let the grind begin! 🔥</li>
+        {% endfor %}
+    </ol>
+
+    <p><a href="/xp_system/profile/">Zurück zu deinem Profil</a></p>
+</body>
+</html>

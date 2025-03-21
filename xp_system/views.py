@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import XPForm
 from .models import XPEntry
 from django.contrib.auth.decorators import login_required
+from django.db.models import Sum
 
 # XP form submission view
 def xp_form_view(request):
@@ -28,3 +29,15 @@ def profile_view(request):
         'entries': entries[:5],  # Show latest 5 entries
     }
     return render(request, 'xp_system/profile.html', context)
+
+# Leaderboard view
+@login_required
+def leaderboard_view(request):
+    leaderboard = (
+        XPEntry.objects
+        .values('user__username')
+        .annotate(total_xp=Sum('xp_points'))
+        .order_by('-total_xp')[:10]
+    )
+
+    return render(request, 'xp_system/leaderboard.html', {'leaderboard': leaderboard})

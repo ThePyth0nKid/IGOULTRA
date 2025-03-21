@@ -149,7 +149,7 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 
 # Where to redirect after login
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/xp_system/profile/'
 
 # Email verification settings
 ACCOUNT_EMAIL_VERIFICATION = 'none'
