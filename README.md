@@ -26,7 +26,7 @@ iGoUltra ist ein umfassendes Projekt, das die Grenzen von Digitalität und Reali
 - Technischer Aufbau und kreative Entwicklung
 
 ## Kontakt
-- **Website**: [www.igo-ultra.org](https://www.igo-ultra.org)
+- **Website**: [www.igoultra.org](https://www.igo-ultra.org)
 - **Discord-Server**: iGoUltra Community
 
 ---
@@ -61,5 +61,5 @@ iGoUltra is a comprehensive project that merges the boundaries of digital and re
 - Technical setup and creative development
 
 ## Contact
-- **Website**: [www.igo-ultra.org](https://www.igo-ultra.org)
+- **Website**: [www.igoultra.org](https://www.igo-ultra.org)
 - **Discord Server**: iGoUltra Community
