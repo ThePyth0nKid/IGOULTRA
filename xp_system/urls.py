@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import add_xp_entry
+from . import views
 
 urlpatterns = [
-    path('add/', add_xp_entry, name='add_xp_entry'),
+    path('xp-form/', views.xp_form_view, name='xp_form'),
 ]
