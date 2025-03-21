@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Django core apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # own apps
     'xp_system',
+    # Django-Allauth apps
+    'django.contrib.sites',  # Required for allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # Social providers (you can add TikTok/Discord later)
+    'allauth.socialaccount.providers.discord',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Allauth middleware (required)
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'ultrabutton.urls'
@@ -123,3 +133,25 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# === Allauth configuration ===
+
+AUTHENTICATION_BACKENDS = [
+    # Default backend for admin login
+    'django.contrib.auth.backends.ModelBackend',
+
+    # Allauth backend for social login
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# Required by allauth
+SITE_ID = 1
+
+# Where to redirect after login
+LOGIN_REDIRECT_URL = '/'
+
+# Email verification settings
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_LOGIN_METHODS = {'username'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']

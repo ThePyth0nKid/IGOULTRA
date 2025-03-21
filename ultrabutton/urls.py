@@ -1,7 +1,12 @@
-from django.contrib import admin
 from django.urls import path, include
+from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('xp_system/', include('xp_system.urls')),  # Deine neue App-URL
+
+    # Allauth URL patterns for login, logout, signup
+    path('accounts/', include('allauth.urls')),
+
+    # Your app urls
+    path('xp_system/', include('xp_system.urls')),
 ]

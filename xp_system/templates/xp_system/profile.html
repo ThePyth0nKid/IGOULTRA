@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Ultra Profile</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }} 👋</h1>
+
+    <h2>🔥 Level: {{ level }}</h2>
+    <p><strong>Total XP:</strong> {{ total_xp }}</p>
+
+    <h3>🕒 Recent Activities:</h3>
+    <ul>
+        {% for entry in entries %}
+            <li>
+                {{ entry.timestamp|date:"Y-m-d H:i" }} — 
+                <strong>{{ entry.activity }}</strong>: {{ entry.xp_points }} XP
+            </li>
+        {% empty %}
+            <li>No XP entries yet. Time to grind! 💪</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="/xp_system/add/">➕ Add new XP</a></p>
+</body>
+</html>
