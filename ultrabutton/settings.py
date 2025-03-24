@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-suqsjqig8eix8o^r%b-9uqe772358g^)d*5s#%s$=z@t4g=0b_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'igoultra-c414ad8c1a00.herokuapp.com',
+    'localhost',
+    '127.0.0.1',
+    '.igoultra.de',
+    '.igoultra.com'
+]
+
 
 
 # Application definition
