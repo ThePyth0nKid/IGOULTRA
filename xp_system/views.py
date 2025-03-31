@@ -7,6 +7,7 @@ from django.db.models import Sum
 from rest_framework import viewsets
 from .serializers import XPEntrySerializer, UserProfileSerializer
 
+
 # XP form submission view
 def xp_form_view(request):
     if request.method == 'POST':
