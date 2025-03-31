@@ -14,6 +14,7 @@ ALLOWED_HOSTS = [
     'igoultra-c414ad8c1a00.herokuapp.com',
     'localhost',
     '127.0.0.1',
+    'igo-ultra-landing.vercel.app',
     '.igoultra.de',
     '.igoultra.com'
 ]
@@ -141,7 +142,9 @@ REST_FRAMEWORK = {
 # === CORS Settings for Vite Frontend ===
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "http://localhost:5174",  # Alternative Vite dev port
+    "http://localhost:5174",
+    "https://igo-ultra-landing.vercel.app",
+    # Alternative Vite dev port
 ]
 
 CORS_ALLOW_CREDENTIALS = True
